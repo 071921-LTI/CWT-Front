@@ -17,9 +17,7 @@ function initMap() {
     const service = new google.maps.DistanceMatrixService();
     // build request
     const origin1 = { lat: 55.93, lng: -3.118 };
-    const origin2 = "Greenwich, England";
-    const destinationA = "Stockholm, Sweden";
-    const destinationB = { lat: 50.087, lng: 14.421 };
+    const destinationA = { lat: 50.087, lng: 14.421 };
     const request = {
       origins: [origin1],
       destinations: [destinationA],
@@ -86,11 +84,11 @@ function initMap() {
   function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     const selectedMode = document.getElementById("mode").value;
     const origin1 = { lat: 55.93, lng: -3.118 };
-    const destinationB = { lat: 50.087, lng: 14.421 };
+    const destinationA = { lat: 50.087, lng: 14.421 };
     directionsService
       .route({
         origin: origin1,
-        destination: destinationB,
+        destination: destinationA,
         // Note that Javascript allows us to access the constant
         // using square brackets and a string value as its
         // "property."
