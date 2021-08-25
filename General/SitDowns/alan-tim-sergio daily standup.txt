@@ -1,0 +1,16 @@
+Scrum lead: Sergio Vega
+
+Tim
+Yesterday:Log in and register pages mapped out. Set up angular project
+Today:Continue working on login and register: making calls
+Blockers: None
+
+Alan
+Yesterday: Worked on models, daos and service layer
+Today: Switch project to spring boot
+Blockers: No blockers
+
+Sergio
+Yesterday: Made test for the service and hibernate
+Today: Work with alan in the backend switching the project to spring boot
+Blockers: None 
