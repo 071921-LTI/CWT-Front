@@ -1,1 +1,7 @@
-<p>nav works!</p>
+<nav [ngStyle]="{'display': displayFlag ? 'block' : 'none'}">
+    <ul>
+        <li><a routerLink='Main'>Main Map</a></li>
+        <li><a routerLink='History'>View History</a></li>
+        <li><a routerLink='Log Out'>Log Out</a></li>
+    </ul>
+</nav>
