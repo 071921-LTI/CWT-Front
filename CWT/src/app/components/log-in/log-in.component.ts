@@ -12,4 +12,21 @@ export class LogInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  userName : string = "";
+  passWord : string = "";
+
+  Attempt_LogIn()
+  {
+      /*
+        Database call, sending in userName and passWord, assuming return true.
+        if successful
+        {
+           Transition to next component (Map)
+        }
+        else
+        {
+            alert("Invaild User Name and/or Pass Word")
+        }
+      */
+  }
 }
