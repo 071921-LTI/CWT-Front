@@ -7,6 +7,7 @@ import { AppComponent } from 'src/app/app.component';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
+
 export class MapComponent implements OnInit {
 
   constructor(private router : Router, private app : AppComponent) {
