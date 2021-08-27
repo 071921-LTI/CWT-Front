@@ -1,6 +1,7 @@
 import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-nav',
@@ -9,19 +10,26 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  displayFlag : boolean = false;
+  displayFlag : boolean = true;
 
-  constructor(private router: Router) { 
-    if(this.router.url !== "/")
-    {
-      if(this.router.url !== "/register")
-      {
-          
-      }
-    }
+  constructor(private route: Router, private app : AppComponent) { 
   }
-
+  
   ngOnInit(): void {
   }
 
+  LogOut(){
+    console.log(this.route.url);
+    if(this.route.url.toString() != "/" && this.route.url.toString() != "/register")
+    {
+      this.app.NullToken();
+      alert("Logging out");
+      this.route.navigate(['/']);
+    }
+    
+  }
+
+  /*RevealNav(){
+    this.displayFlag = true;
+  }*/
 }

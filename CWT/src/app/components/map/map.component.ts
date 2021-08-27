@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-map',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router, private app : AppComponent) {
+      if(app.isTokenNull())
+      {
+        console.log("Token is null!{" + app.token + "}");
+        router.navigate(['/']);
+      }
+   }
 
   ngOnInit(): void {
   }

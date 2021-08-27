@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
+
 
 @Component({
   selector: 'app-log-in',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private token : AppComponent) {
 
   }
 
@@ -35,7 +37,10 @@ export class LogInComponent implements OnInit {
       console.log("Got here!");
       if(xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300){
            //Transition to next component (Map)
-          this.router.navigate(['/',"Main"]);
+           let response = xhr.getResponseHeader("Authorization");
+           this.token.token = response;   
+           console.log("Token Acquired:{" + this.token.token + "}");       
+            this.router.navigate(['/',"Main"]);
       }
       else if(xhr.readyState === 4)
       {
