@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
     {
       if(this.router.url !== "/register")
       {
-
+          
       }
     }
   }
