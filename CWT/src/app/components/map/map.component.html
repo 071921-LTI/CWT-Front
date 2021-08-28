@@ -3,6 +3,16 @@
   <head>
     <title>Simple Map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="map.component.css" />
+
+    <script type="text/javascript">
+      function initMap() {
+          let map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: { lat: -34.397, lng: 150.644 }
+          });
+      }
+      </script>
   </head>
   <body>
     <div id="floating-panel">
@@ -21,7 +31,7 @@
         </div>
       </div>
     <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly&channel=2"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2nbNo7DN2i3zGRwFxuDnIERE3Tmjivv0&callback=initMap&libraries=&v=weekly"
       async
     ></script>
   </body>
