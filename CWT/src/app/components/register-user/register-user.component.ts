@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
+
 
 @Component({
   selector: 'app-register-user',
@@ -8,14 +10,13 @@ import { Router } from '@angular/router';
 })
 export class RegisterUserComponent implements OnInit {
 
-  constructor(private router: Router)  { 
+  constructor(private router: Router, private app : AppComponent)  { 
 
   }
 
   ngOnInit(): void {
   }
 
-  id : number = 0;
   firstName : string = "";
   lastName : string = "";
   email : string = "";
@@ -34,31 +35,11 @@ export class RegisterUserComponent implements OnInit {
           //Okay, they match.
           this.actualPassword = this.passwordConfirm2;
           console.log("Passwords Match");
-          //Get the count of users in DB
-          let counterURL = 'http://localhost:8080/users/count';
-          let xhr_Counter = new XMLHttpRequest();
-          xhr_Counter.open("GET", counterURL);
-          xhr_Counter.setRequestHeader("Content-Type", "application/json");
-          xhr_Counter.send();
-          xhr_Counter.onreadystatechange = () => {
-            if(xhr_Counter.readyState === 4 && xhr_Counter.status >= 200 && xhr_Counter.status < 300){
-              //Got it. Now increment ID by 1.
-              console.log("Obtained count of numbers(" + xhr_Counter.response + ")");
-              let inc_Id = xhr_Counter.response;
-              this.id = inc_Id + 1;
-            }
-            else if(xhr_Counter.readyState === 4){
-              //How did this go wrong...?
-              console.log("Something went wrong in getting the number of users in the DB");
-              this.ResetForm();
-            }
-          }
 
           //Now let's register the user.
           let postURL = 'http://localhost:8080/users/';
           let reg_xhr = new XMLHttpRequest(); 
-          let registerBody = `{"id":${this.id},
-                              "username":\"${this.userName}\",
+          let registerBody = `{"username":\"${this.userName}\",
                               "password":\"${this.actualPassword}\"}`;
           reg_xhr.open("POST",postURL);
           
@@ -68,6 +49,7 @@ export class RegisterUserComponent implements OnInit {
             if(reg_xhr.readyState === 4 && reg_xhr.status >= 200 && reg_xhr.status < 300){
               //Register Successful! Transition to next component (Map)
               alert("Registration successful! Welcome to the Call Weather and Traffic app!")
+              this.GetNewToken();
               this.router.navigate(['/',"Main"]);
             }
             else if(reg_xhr.readyState === 4){
@@ -92,7 +74,12 @@ export class RegisterUserComponent implements OnInit {
     this.userName = "";
     this.passwordConfirm1 = "";
     this.passwordConfirm2 = "";
-    this.id = 0;
+  }
+
+  GetNewToken() {
+    
   }
 }
+
+ 
 
