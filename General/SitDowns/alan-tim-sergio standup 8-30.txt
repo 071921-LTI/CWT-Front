@@ -1,0 +1,14 @@
+Tim
+Yesterday: Completed loging and register functionality. 
+Today: Figuring out the map function.
+Blockers: Time
+
+Alan
+Yesterday: Back end work. Exception handlers, security. Worked on showing the map in the front end
+Today: Work on map displaying map.
+Blockers:  Not sure how to work with typescript
+
+Sergio  
+Yesterday: Worked on back end controller. 
+Today: Work on the front end implementation of weather api
+Blockers: Angular functionality
