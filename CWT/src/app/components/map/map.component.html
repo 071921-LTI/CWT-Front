@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="map.component.css" />
-
-    <script type="text/javascript">
-      function initMap() {
-          let map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 10,
-              center: { lat: -34.397, lng: 150.644 }
-          });
-      }
-      </script>
-  </head>
-  <body>
-    <div id="floating-panel">
-        <b>Mode of Travel: </b>
-        <select id="mode">
-          <option value="DRIVING">Driving</option>
-        </select>
-    </div>
-    <div id="container">
-        <div id="map"></div>
-        <div id="sidebar">
-          <h3 style="flex-grow: 0">Request</h3>
-          <pre style="flex-grow: 1" id="request"></pre>
-          <h3 style="flex-grow: 0">Response</h3>
-          <pre style="flex-grow: 1" id="response"></pre>
-        </div>
-      </div>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2nbNo7DN2i3zGRwFxuDnIERE3Tmjivv0&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
-  </body>
-</html>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<div id="map" style="width: 100%; height: 450px;"></div>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2nbNo7DN2i3zGRwFxuDnIERE3Tmjivv0&callback=execute_Map">
+</script>

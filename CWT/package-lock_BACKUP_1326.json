@@ -26,7 +26,10 @@
         "@angular/cli": "~12.2.1",
         "@angular/compiler-cli": "~12.2.0",
         "@types/google.maps": "^3.45.6",
+<<<<<<< HEAD
         "@types/googlemaps": "^3.43.3",
+=======
+>>>>>>> main
         "@types/jasmine": "~3.8.0",
         "@types/jquery": "^3.5.6",
         "@types/node": "^12.11.1",
@@ -2407,6 +2410,7 @@
       "integrity": "sha512-BzGzxs8UXFxeP8uN/0nRgGbsbpYQxSCKsv/7S8OitU7wwhfFcqQSm5aAcL1nbwueMiJ/VVmIZKPq69s0kX5W+Q==",
       "dev": true
     },
+<<<<<<< HEAD
     "node_modules/@types/googlemaps": {
       "version": "3.43.3",
       "resolved": "https://registry.npmjs.org/@types/googlemaps/-/googlemaps-3.43.3.tgz",
@@ -2414,6 +2418,8 @@
       "deprecated": "Types for the Google Maps browser API have moved to @types/google.maps. Note: these types are not for the googlemaps npm package, which is a Node API.",
       "dev": true
     },
+=======
+>>>>>>> main
     "node_modules/@types/jasmine": {
       "version": "3.8.2",
       "resolved": "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.8.2.tgz",
@@ -17688,12 +17694,15 @@
       "integrity": "sha512-BzGzxs8UXFxeP8uN/0nRgGbsbpYQxSCKsv/7S8OitU7wwhfFcqQSm5aAcL1nbwueMiJ/VVmIZKPq69s0kX5W+Q==",
       "dev": true
     },
+<<<<<<< HEAD
     "@types/googlemaps": {
       "version": "3.43.3",
       "resolved": "https://registry.npmjs.org/@types/googlemaps/-/googlemaps-3.43.3.tgz",
       "integrity": "sha512-ZWNoz/O8MPEpiajvj7QiqCY8tTLFNqNZ/a+s+zTV58wFVNAvvqV4bdGfnsjTb5Cs4V6wEsLrX8XRhmnyYJ2Tdg==",
       "dev": true
     },
+=======
+>>>>>>> main
     "@types/jasmine": {
       "version": "3.8.2",
       "resolved": "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.8.2.tgz",
@@ -18027,7 +18036,9 @@
       "resolved": "https://registry.npmjs.org/ajv-formats/-/ajv-formats-2.1.0.tgz",
       "integrity": "sha512-USH2jBb+C/hIpwD2iRjp0pe0k+MvzG0mlSn/FIdCgQhUb9ALPRjt2KIQdfZDS9r0ZIeUAg7gOu9KL0PFqGqr5Q==",
       "dev": true,
-      "requires": {}
+      "requires": {
+        "ajv": "^8.0.0"
+      }
     },
     "alphanum-sort": {
       "version": "1.0.2",

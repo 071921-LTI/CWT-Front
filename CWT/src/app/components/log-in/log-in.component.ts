@@ -11,7 +11,7 @@ import { AppComponent } from 'src/app/app.component';
 export class LogInComponent implements OnInit {
 
   constructor(private router: Router, private token : AppComponent) {
-
+    console.log(token.googleMapsUrl);
   }
 
   ngOnInit(): void {
