@@ -1,14 +1,14 @@
 Tim
-Yesterday: 
-Today:
-Blockers: 
+Yesterday: Google maps api working. 
+Today: expand the map functionality
+Blockers: no blockers
 
 Alan
-Yesterday: 
-Today:
-Blockers:  
+Yesterday: worked on google map api along with tim
+Today: work on map functionality
+Blockers: none
 
 Sergio  
-Yesterday: 
-Today: 
-Blockers: 
+Yesterday: worked on weather api calls 
+Today: display the data in the appropriate places
+Blockers: none
