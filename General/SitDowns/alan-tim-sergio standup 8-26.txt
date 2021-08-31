@@ -1,0 +1,16 @@
+Scrum lead: Sergio Vega
+
+Tim
+Yesterday: Completed event mapping for login and register. components for history and map
+Today: Set up testing front end.
+Blockers: Waiting on setting up the database connection
+
+Alan
+Yesterday: Transfered the webmvc to spring boot. user service trip service
+Today: adding execption handlers. 
+Blockers: No blockers
+
+Sergio
+Yesterday: Worked on controllers but ran into an issue fixed this afternoon.
+Today: Write some test and finishing up the controllers
+Blockers: None
