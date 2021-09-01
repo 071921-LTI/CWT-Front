@@ -1,6 +1,6 @@
 import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router, Event } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -10,9 +10,22 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class NavComponent implements OnInit {
 
-  displayFlag : boolean = true;
+  displayFlag : boolean = false;
 
   constructor(private route: Router, private app : AppComponent) { 
+    this.route.events.subscribe((event: Event) => {
+      if(event instanceof NavigationEnd)
+      {
+        if(this.route.url.toString() != "/" && this.route.url.toString() != "/register")
+        {
+          this.RevealNav(true);
+        }
+        else
+        {
+          this.RevealNav(false);
+        }
+      }
+    });
   }
   
   ngOnInit(): void {
@@ -29,7 +42,7 @@ export class NavComponent implements OnInit {
     
   }
 
-  /*RevealNav(){
-    this.displayFlag = true;
-  }*/
+  RevealNav(x: boolean){
+    this.displayFlag = x;
+  }
 }
