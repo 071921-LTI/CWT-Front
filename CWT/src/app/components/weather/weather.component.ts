@@ -9,19 +9,21 @@ import { CallWeatherService } from 'src/app/services/call-weather.service';
 export class WeatherComponent implements OnInit {
 @Input() day1:string = '';
 @Input() day2:string = '';
-currLocWeather: any = {}
+currLocWeather: any = {};
 @Input() location:string = '';
 @Output() todaysWeather:any ='';
 @Output() nextDayWeather:string = '';
 
+@Input() s:any;
+public weather:any=[];
   constructor(private api:CallWeatherService) { }
  
   ngOnInit(): void {
-    this.api.callBasicWeather(77484).subscribe((weather)=>
-    {console.log(weather);
-     this.currLocWeather = weather});
-     
-    console.log(this.currLocWeather)
+    console.log(this.s);
+    this.api.callBasicWeather(this.s).subscribe((response)=>
+    {console.log(response);
+    this.weather = response});
+    
   }
 
 

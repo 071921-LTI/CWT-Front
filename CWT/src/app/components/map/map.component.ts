@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { Loader } from "@googlemaps/js-api-loader"
 import { Position } from '@angular/compiler';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-map',
@@ -11,8 +12,10 @@ import { Position } from '@angular/compiler';
 })
 
 export class MapComponent implements OnInit {
-  x:any;
+  public x:any;
   mark:any;
+  s:string = '';
+  @Output() curr:EventEmitter<any> = new EventEmitter();
   constructor(private router : Router, private app : AppComponent) {
       /*if(app.isTokenNull()) --Uncomment this when done with Map Features.
       {
@@ -71,6 +74,10 @@ export class MapComponent implements OnInit {
               map,
             });
             this.x = pos;
+            this.s = String(this.x['lat'])+ ','+ String(this.x['lng']);
+            console.log(this.s);
+            this.curr.emit();
+  
           }
         );
       } 
@@ -93,6 +100,7 @@ export class MapComponent implements OnInit {
     directionsRenderer.setPanel(document.getElementById("sidebar") as HTMLElement);
     const control = document.getElementById("floating-panel") as HTMLElement;
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
     const onChangeHandler =  () => {
       // const start = (document.getElementById("start") as HTMLInputElement).value;
       // let start:any = "21 Elton Court,Uncasville,CT";
