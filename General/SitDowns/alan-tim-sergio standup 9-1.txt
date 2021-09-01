@@ -1,0 +1,14 @@
+Tim
+Yesterday: Google api displays correctly
+Today: work on getting user inputs 
+Blockers: none
+
+Alan
+Yesterday: added functions for map
+Today: working with sergio on weather api
+Blockers: none
+
+Sergio  
+Yesterday: worked on weather functions 
+Today: will debug issues with the weather
+Blockers: cannot get api to display information
