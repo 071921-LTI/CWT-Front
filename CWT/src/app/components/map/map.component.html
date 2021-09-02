@@ -35,8 +35,12 @@
     </td>
   </tr>
 </table>
+<div id='repeating_WayPoints'>
+</div>
 <div id="floating-panel" >
   &nbsp;<button id="GO" (click)="ShowRoute()">GO!</button>
+  &nbsp;<button id="AddWayPoint" (click)="Add_Additional_Waypoint()">Add Waypoint</button>
+  &nbsp;<button (click)="Concatenate_WayPoints()">Check...</button>
 </div>
 <div id="container">
   <div id="map"></div>
