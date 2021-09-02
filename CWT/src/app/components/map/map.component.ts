@@ -14,18 +14,22 @@ import { stringify } from '@angular/compiler/src/util';
 export class MapComponent implements OnInit {
   public x:any;
   mark:any;
-  s:string = '';
-  @Output() curr:EventEmitter<any> = new EventEmitter();
+  currentLocation:string = '';
+  DestinationMark:string = '';
+  timeElapsed:any;
+  @Output() out:EventEmitter<any> = new EventEmitter();
+  @Output() out2:EventEmitter<any> = new EventEmitter();
+
   constructor(private router : Router, private app : AppComponent) {
-      /*if(app.isTokenNull()) --Uncomment this when done with Map Features.
+      if(app.isTokenNull())
       {
         console.log("Token is null!{" + app.token + "}");
         router.navigate(['/']);
       }
       else
-      {*/
+      {
         this.addMapsScript();
-      //}
+      }
    }
 
   ngOnInit(): void {
@@ -50,7 +54,8 @@ export class MapComponent implements OnInit {
       center: {lat: 41.7, lng: -73.7},
       zoom: 8
     });
-    
+    const trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map);
     // Current Location Function
     let infoWindow = new google.maps.InfoWindow();
 
@@ -74,9 +79,8 @@ export class MapComponent implements OnInit {
               map,
             });
             this.x = pos;
-            this.s = String(this.x['lat'])+ ','+ String(this.x['lng']);
-            console.log(this.s);
-            this.curr.emit();
+            this.currentLocation = String(this.x['lat'])+ ','+ String(this.x['lng']);
+            this.out.emit();
   
           }
         );
@@ -90,6 +94,9 @@ export class MapComponent implements OnInit {
         map,
       });
       this.mark = mapsMouseEvent.latLng;
+      this.mark.toJSON();
+      this.DestinationMark = String(this.mark.toJSON()['lat'])+ ','+ String(this.mark.toJSON()['lng']);
+
     });
 
 
@@ -102,10 +109,6 @@ export class MapComponent implements OnInit {
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
     const onChangeHandler =  () => {
-      // const start = (document.getElementById("start") as HTMLInputElement).value;
-      // let start:any = "21 Elton Court,Uncasville,CT";
-      // let end:any = "30 norwitch road,CT";
-      // const end = (document.getElementById("end") as HTMLInputElement).value;
 
       directionsService
       .route({
@@ -115,7 +118,7 @@ export class MapComponent implements OnInit {
       })
       .then((response) => {
         directionsRenderer.setDirections(response);
-        console.log(response);
+        this.timeElapsed =response['routes'][0].legs[0].duration?.value;
       })
       .catch((e) => window.alert("Directions request failed due to " + status));
 
