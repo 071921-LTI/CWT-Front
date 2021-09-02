@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MyComponentComponent } from './components/my-component/my-component.component';
 import { MapComponent } from './components/map/map.component';
 import { HistoryComponent } from './components/history/history.component';
+import { WeatherComponent } from './components/weather/weather.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { HistoryComponent } from './components/history/history.component';
     MyComponentComponent,
     MapComponent,
     HistoryComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
