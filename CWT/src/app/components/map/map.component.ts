@@ -118,6 +118,7 @@ export class MapComponent implements OnInit {
       }
     }
     );
+
     //Marker Function
     this.getMap().addListener("click", (mapsMouseEvent: any) => {
       let map = this.getMap();
@@ -134,6 +135,7 @@ export class MapComponent implements OnInit {
     const directionsService = new google.maps.DirectionsService();
     directionsRenderer.setMap(this.getMap());
     directionsRenderer.setPanel(document.getElementById("sidebar") as HTMLElement);
+
     if (this.x == null && this.mark == null) {
       this.x = this.SetPlace(this.starting_Street, this.starting_City, this.starting_State, this.starting_ZipCode);
       this.mark = this.SetPlace(this.end_Street, this.end_City, this.end_State, this.end_ZipCode);
