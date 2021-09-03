@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HistoryComponent } from './components/history/history.component';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'CWT';
   token : string | null = "";
-  googleMapsUrl : string = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA2nbNo7DN2i3zGRwFxuDnIERE3Tmjivv0";
-
+  key : string = "AIzaSyA2nbNo7DN2i3zGRwFxuDnIERE3Tmjivv0";
+  googleMapsUrl : string = "https://maps.googleapis.com/maps/api/js?key=" + this.key;
   isTokenNull() {
     if(this.token == null || this.token == "")
       return true;

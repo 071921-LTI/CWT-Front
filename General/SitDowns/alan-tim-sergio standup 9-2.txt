@@ -1,0 +1,15 @@
+Tim
+Yesterday: user inputs work with google api. can input street address
+Today: working on adding stops
+Blockers: working with dynamically created text boxes
+
+Alan
+Yesterday: worked on event emmiter for weather
+Today: keep working on the weather components
+Blockers: none
+
+Sergio  
+Yesterday: solved issue with not weather api information not showing. worked with
+alan on weather functions
+Today: work on weather functions and show the weather based on pinged locations
+Blockers: correctly applying event emmiters
