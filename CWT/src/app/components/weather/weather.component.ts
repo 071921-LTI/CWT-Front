@@ -7,38 +7,52 @@ import { CallWeatherService } from 'src/app/services/call-weather.service';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
-@Input() day1:string = '';
-@Input() day2:string = '';
-currLocWeather: any = {};
-@Input() location:string = '';
-@Output() todaysWeather:any ='';
-@Output() nextDayWeather:string = '';
 
-@Input() s:any;
-public weather:any=[];
+@Input() currentLocation:any;
+@Input() DestinationMark:any;
+@Input() timeElapsed:any;
+curTemp:any;
+curWeather:any;
+curHumidity:any;
+curTime:any;
+
+Destday:number = 0;
+DestTemp:any;
+DestWeather:any;
+DestHumidity:any;
+DestTime:any;
+public currWeather:any=[];
+public destWeather:any=[];
   constructor(private api:CallWeatherService) { }
  
   ngOnInit(): void {
-    console.log(this.s);
-    this.api.callBasicWeather(this.s).subscribe((response)=>
-    {console.log(response);
-    this.weather = response});
     
   }
 
+  callCurrWeather():void{
+    this.api.callBasicWeather(this.currentLocation).subscribe((response)=>
+    {this.currWeather = response
+    this.curTemp = this.currWeather['currentConditions'].temp;
+    this.curWeather = this.currWeather['currentConditions'].conditions;
+    this.curHumidity = this.currWeather['currentConditions'].humidity;
+    this.curTime = this.currWeather['currentConditions'].datetime;});
+  }
+  
 
-    // this.api.callBasicWeather().subscribe((data)=>{
-    //   console.log(data)
-    //   // this.forecast = data['description'];
-    //   this.forecast = ''
-    //   // data['resolvedAddress'];
-    // })
+  callDestWeather():void{
+    if (this.timeElapsed>=86400){
+      this.Destday = Math.round(this.timeElapsed /86400);
+    }
 
+    this.api.callBasicWeather(this.DestinationMark).subscribe((response)=>
+    {this.destWeather = response
+    this.DestTemp = this.destWeather['days'][this.Destday].temp;
+    this.DestWeather = this.destWeather['days'][this.Destday].conditions;
+    this.DestHumidity = this.destWeather['days'][this.Destday].humidity;
+    this.DestTime = this.destWeather['days'][this.Destday].datetime;
+  });
+  }
 
-
-    // this.api.getWeatherBetweenTwoDays().subscribe((data1)=>{})
-
-    // this.api.getWeatherBetweenTwoDays().subscribe((data2)=>{})
 
 
 }

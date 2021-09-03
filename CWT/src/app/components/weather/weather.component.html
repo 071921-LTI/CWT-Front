@@ -1,11 +1,29 @@
 <div class="div">
-    <h1>Current weather conditions in {{s}}</h1>
-    <h3>
-        <!-- Current Temperature: {{weather['currentConditions'].temp}}°F
+    <h1>Current weather conditions in ({{currentLocation}})</h1>
+    <button id="btn" (click)='callCurrWeather()'>Show Current Weather</button>
+    <h2>
         <br>
-        Current Weather: {{weather['currentConditions'].conditions}}
+        Current Temperature: {{curTemp}}°F
         <br>
-        Current Humidity{{weather['currentConditions'].humidity}} -->
-    </h3>
+        Current Weather: {{curWeather}}
+        <br>
+        Current Humidity: {{curHumidity}}
+        <br>
+        Weather Updated at: {{curTime}}
+    </h2>
+
+    <br><br>
+    <h1>Destination weather conditions in ({{DestinationMark}})</h1>
+    <button id="btn_1" (click)='callDestWeather()'>Show Desination Weather</button>
+    <h2>
+        Destination Temperature: {{DestTemp}}°F
+        <br>
+        Destination Weather: {{DestWeather}}
+        <br>
+        Destination Humidity: {{DestHumidity}}
+        <br>
+        Destination Date: {{DestTime}}
+
+    </h2>
 </div>
 
