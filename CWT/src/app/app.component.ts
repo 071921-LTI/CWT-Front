@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HistoryComponent } from './components/history/history.component';
 
 @Component({
   selector: 'app-root',

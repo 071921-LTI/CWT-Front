@@ -17,11 +17,11 @@ currLocWeather: any = {}
   constructor(private api:CallWeatherService) { }
  
   ngOnInit(): void {
-    this.api.callBasicWeather(77484).subscribe((weather)=>
-    {console.log(weather);
-     this.currLocWeather = weather});
+    // this.api.callBasicWeather(77484).subscribe((weather)=>
+    // {console.log(weather);
+    //  this.currLocWeather = weather});
      
-    console.log(this.currLocWeather)
+    // console.log(this.currLocWeather)
   }
 
 

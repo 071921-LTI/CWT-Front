@@ -1,9 +1,8 @@
 export interface Trip {
-    
-    start:string;
-    end:string;
-    time:number;
-    distance:number;
-    created:number;
-    id: number;
+    t_id:number;
+    submitted_datetime:string
+    curr_location:string
+    destination:string
+    time_elapsed:number
+    user_id:number
   }

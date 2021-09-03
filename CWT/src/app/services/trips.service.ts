@@ -9,14 +9,15 @@ import { Trip } from '../trip';
 export class TripsService {
 
   private urlAllTrips = 'http://localhost:8080/trip/all';
-  private urlOneTrip = 'http://localhost:8080/trip/';//need to add value at the end with what trip needs to be requested
+  private urlOneTrip = 'http://localhost:8080/trip/';
   private urlddTrip = 'http://localhost:8080/trip';
+  private urlUserTrips = 'http://localhost:8080/trip/user/';
 
   constructor(private http :HttpClient) { }
 
 
-  getATrip(trip:number): Observable<Trip>{
-    return this.http.get<Trip>(this.urlOneTrip+trip)
+  getATrip(trip:number): Observable<Trip[]>{
+    return this.http.get<Trip[]>(this.urlOneTrip+trip)
   }
 
   getAllTrips(): Observable<Trip[]>{
@@ -26,4 +27,9 @@ export class TripsService {
   addTrip(trip:Trip):Observable<Trip>{
     return this.http.post<Trip>(this.urlddTrip,trip);
   }
+
+  getTripsFromUser(user:number): Observable<Trip[]>{
+    return this.http.get<Trip[]>(this.urlUserTrips+user)
+  }
+
 }
