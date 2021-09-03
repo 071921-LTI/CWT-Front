@@ -1,0 +1,14 @@
+Tim
+Yesterday: waypoints functional in maps.
+Today: merging all code. 
+Blockers: time will be a blocker this weekend
+
+Alan
+Yesterday: added traffic layer and added weather on both ends
+Today: merge code. set up ec2
+Blockers: none
+
+Sergio  
+Yesterday: added history component functionalities
+Today: work on admin component
+Blockers: none
