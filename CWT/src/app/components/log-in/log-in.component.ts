@@ -38,6 +38,7 @@ export class LogInComponent implements OnInit {
       if(xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300){
            //Transition to next component (Map)
            let response = xhr.getResponseHeader("Authorization");
+          sessionStorage.setItem('token',String(response));
            this.token.token = response;   
           //  console.log("Token Acquired:{" + this.token.token + "}");
           //  console.log(response?.slice(1))

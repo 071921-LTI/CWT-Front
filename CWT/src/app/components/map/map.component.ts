@@ -117,6 +117,8 @@ export class MapComponent implements OnInit {
               }
             );
           this.x = pos;
+          this.currentLocation = String(this.x['lat'])+ ','+ String(this.x['lng']);
+          this.out.emit();
         });
       }
     }
@@ -130,6 +132,8 @@ export class MapComponent implements OnInit {
         map,
       });
       this.mark = mapsMouseEvent.latLng;
+      this.DestinationMark = String(this.mark.toJSON()['lat'])+ ','+ String(this.mark.toJSON()['lng']);
+
     });
   }
 
@@ -161,7 +165,7 @@ export class MapComponent implements OnInit {
         travelMode: google.maps.TravelMode.DRIVING,
       }).then((response) => {
         directionsRenderer.setDirections(response);
-        console.log(response);
+        this.timeElapsed =response['routes'][0].legs[0].duration?.value;
       }).catch((e) => window.alert("Directions request failed due to " + status));
   }
 

@@ -3,11 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/users';
 
+let token = sessionStorage.getItem("token");
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Access-Control-Allow-Origin': '*',
-    'Authorization': 'authkey',
-    'userid': '1'
+    'Authorization': String(token),
   })
 };
 
@@ -15,7 +16,6 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserServiceService {
-
   private url = 'http://localhost:8080/users';
 
   constructor(private http :HttpClient) { }
@@ -23,10 +23,10 @@ export class UserServiceService {
 
   
   getAllUsers():Observable<User[]>{
-    return this.http.get<User[]>(this.url+"/all")
+    return this.http.get<User[]>(this.url+"/all",httpOptions)
   }
 
   deleteUser(usr:User):Observable<string>{
-    return  this.http.delete<string>(this.url+"/dlt/"+usr.id)
+    return  this.http.delete<string>(this.url+"/dlt/"+usr.id,httpOptions)
   }
 }
