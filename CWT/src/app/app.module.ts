@@ -13,6 +13,12 @@ import { MapComponent } from './components/map/map.component';
 import { HistoryComponent } from './components/history/history.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.component';
+import { AdminViewAllUsersComponent } from './components/admin-view-all-users/admin-view-all-users.component';
+import { AdminDeleteUsersComponent } from './components/admin-delete-users/admin-delete-users.component';
+import { AdminViewTripHistoryComponent } from './components/admin-view-trip-history/admin-view-trip-history.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,12 @@ import {HttpClientModule} from '@angular/common/http';
     MapComponent,
     HistoryComponent,
     WeatherComponent,
+    AdminComponent,
+    AdminNavBarComponent,
+    AdminViewAllUsersComponent,
+    AdminDeleteUsersComponent,
+    AdminViewTripHistoryComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

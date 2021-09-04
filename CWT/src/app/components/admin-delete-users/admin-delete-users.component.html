@@ -1,0 +1,25 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+<div >
+    <br>
+    <table class="tbl">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">username</th>
+                <th scope="col">role</th>
+                <th scope="col">registered time</th>
+            </tr>
+        </thead>
+
+        <ng-container *ngIf="users.length">
+            <tbody *ngFor="let num of users; let i = index">
+                <td>{{num.id}}</td>
+                <td>{{num.username}}</td>
+                <td>{{num.role}}</td>
+                <td>{{num.registered_datetime}}</td>  
+                <!-- time format in DB not converting correctly --> 
+                <app-button (click)="deleteUser(num)"></app-button>
+            </tbody>
+          </ng-container>
+    </table>
+</div>
