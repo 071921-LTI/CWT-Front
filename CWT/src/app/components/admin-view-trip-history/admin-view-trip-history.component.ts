@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Trip } from 'src/app/trip';
 import { TripsService } from 'src/app/services/trips.service';
+import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-admin-view-trip-history',
@@ -9,6 +11,7 @@ import { TripsService } from 'src/app/services/trips.service';
 })
 export class AdminViewTripHistoryComponent implements OnInit {
   trips:Trip[]=[]
+  
   constructor(private trip:TripsService) { }
 
   ngOnInit(): void {
