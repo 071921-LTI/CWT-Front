@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { Router, RouterLinkWithHref } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { Loader } from "@googlemaps/js-api-loader"
@@ -20,7 +20,10 @@ const locationButton = document.createElement("button");
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-
+  currentLocation:string = '';
+  DestinationMark:string = '';
+  timeElapsed:any;
+  @Output() out:EventEmitter<any> = new EventEmitter();
   starting_Street: string = "";
   starting_City: string = "";
   starting_State: string = "";

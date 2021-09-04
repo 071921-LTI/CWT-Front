@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input,EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 
@@ -39,8 +39,18 @@ export class LogInComponent implements OnInit {
            //Transition to next component (Map)
            let response = xhr.getResponseHeader("Authorization");
            this.token.token = response;   
-           console.log("Token Acquired:{" + this.token.token + "}");       
-            this.router.navigate(['/',"Main"]);
+          //  console.log("Token Acquired:{" + this.token.token + "}");
+          //  console.log(response?.slice(1))
+           switch(response?.slice(1)){
+            case ":ADMIN":
+              this.router.navigate(['/',"Admin"]);
+              break;
+            case ":BASIC_USER":
+              this.router.navigate(['/',"Main"])
+            break;
+
+           }    
+            
       }
       else if(xhr.readyState === 4)
       {

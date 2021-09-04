@@ -1,7 +1,8 @@
 import { style } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router, Event } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { LogInComponent } from '../log-in/log-in.component';
 
 @Component({
   selector: 'app-nav',
@@ -11,18 +12,22 @@ import { AppComponent } from 'src/app/app.component';
 export class NavComponent implements OnInit {
 
   displayFlag : boolean = false;
-
+  
   constructor(private route: Router, private app : AppComponent) { 
     this.route.events.subscribe((event: Event) => {
       if(event instanceof NavigationEnd)
       {
-        if(this.route.url.toString() != "/" && this.route.url.toString() != "/register")
-        {
-          this.RevealNav(true);
-        }
-        else
+        if(this.route.url.toString() == "/" || 
+           this.route.url.toString() == "/register"||
+           this.route.url.toString() == "/adminViewAll"||
+           this.route.url.toString() == "/adminDelete"||
+           this.route.url.toString() == "/adminViewAllTrips"||
+           this.route.url.toString() == "/Admin")
         {
           this.RevealNav(false);
+        } 
+        else{
+          this.RevealNav(true);
         }
       }
     });
@@ -32,7 +37,6 @@ export class NavComponent implements OnInit {
   }
 
   LogOut(){
-    console.log(this.route.url);
     if(this.route.url.toString() != "/" && this.route.url.toString() != "/register")
     {
       this.app.NullToken();
