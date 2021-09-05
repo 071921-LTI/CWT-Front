@@ -7,7 +7,7 @@ nav ul{
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    background-color: gray;
+    background-color: rgb(28, 30, 167);
     overflow: hidden;
 }
 nav ul li{

@@ -14,14 +14,14 @@
         </thead>
 
         <ng-container *ngIf="trips.length">
-            <tbody *ngFor="let trp of trips; let i = index">
+            <tr *ngFor="let trp of trips; let i = index" class="table" >
                 <td>{{trp.t_id}}</td>
                 <td>{{trp.submitted_datetime}}</td>
                 <td>{{trp.curr_location}}</td>
                 <td>{{trp.destination}}</td>  
                 <td>{{trp.time_elapsed}}</td>
                 <td>{{trp.user_id}}</td>  
-            </tbody>
+            </tr>
           </ng-container>
     </table>
 

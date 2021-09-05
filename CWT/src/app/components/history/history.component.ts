@@ -1,6 +1,6 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { TripsService } from 'src/app/services/trips.service';
-import { Trip } from 'src/app/trip';
+import { Trip } from 'src/app/models/trip';
 
 let token:String| null = sessionStorage.getItem("token");
 @Component({

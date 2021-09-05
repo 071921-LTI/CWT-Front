@@ -2,9 +2,8 @@ import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { Router, RouterLinkWithHref } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { Loader } from "@googlemaps/js-api-loader"
-import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
-import { identifierModuleUrl, Position } from '@angular/compiler';
-import { Trip } from 'src/app/trip';
+import { HttpHeaders } from '@angular/common/http';
+import { Trip } from 'src/app/models/trip';
 import { TripsService } from 'src/app/services/trips.service';
 
 let token:String| null = sessionStorage.getItem("token");
@@ -43,19 +42,10 @@ export class MapComponent implements OnInit {
   
   tripToAdd:Trip[]=[];
 
-  constructor(private router: Router, private app: AppComponent, private tripSvc:TripsService) {
-    /*if(app.isTokenNull()) --Uncomment this when done with Map Features.
-    {
-      console.log("Token is null!{" + app.token + "}");
-      router.navigate(['/']);
-    }
-    else
-    {*/
-    this.addMapsScript();
-    //}
-  }
+  constructor(private router: Router, private app: AppComponent, private tripSvc:TripsService) {}
 
   ngOnInit(): void {
+    this.addMapsScript();
   }
 
   addMapsScript() {

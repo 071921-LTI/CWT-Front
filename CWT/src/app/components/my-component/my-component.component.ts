@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { Trip } from "src/app/trip";
+import { Component, OnInit } from "@angular/core";
+import { Trip } from "src/app/models/trip";
 
 @Component({
     selector: 'app-mycomp',
