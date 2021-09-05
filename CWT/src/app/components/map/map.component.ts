@@ -133,7 +133,7 @@ export class MapComponent implements OnInit {
       });
       this.mark = mapsMouseEvent.latLng;
       this.DestinationMark = String(this.mark.toJSON()['lat'])+ ','+ String(this.mark.toJSON()['lng']);
-
+    
     });
   }
 
@@ -146,7 +146,21 @@ export class MapComponent implements OnInit {
     if (this.x == null && this.mark == null) {
       this.x = this.SetPlace(this.starting_Street, this.starting_City, this.starting_State, this.starting_ZipCode);
       this.mark = this.SetPlace(this.end_Street, this.end_City, this.end_State, this.end_ZipCode);
+      this.currentLocation = this.x.slice(0,this.x.length-5);
+      this.DestinationMark = this.mark.slice(0,this.mark.length-5);
     }
+    else{
+      let input1 = this.SetPlace(this.starting_Street, this.starting_City, this.starting_State, this.starting_ZipCode);
+      let input2 = this.SetPlace(this.end_Street, this.end_City, this.end_State, this.end_ZipCode);
+      if(input1.length >3 && input2.length >3){
+        this.x = input1;
+        this.mark = input2;
+        this.currentLocation = this.x;
+        this.DestinationMark = this.mark;
+      }
+    }
+
+
     this.Concatenate_WayPoints();
     let ways: google.maps.DirectionsWaypoint[] = [];
     if (this.WayPointsMap != null) {

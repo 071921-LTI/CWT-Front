@@ -20,10 +20,6 @@ export class HistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.userTrips(1)
-    console.log(this.userId);
-    console.log(this.currentLocation);
-    console.log(this.DestinationMark);
-    console.log(this.timeElapsed);
   }
 
   userTrips(user: number) {
