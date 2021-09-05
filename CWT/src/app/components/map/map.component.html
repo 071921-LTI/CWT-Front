@@ -40,6 +40,7 @@
 <div id="floating-panel" >
   &nbsp;<button id="GO" (click)="ShowRoute()">GO!</button>
   &nbsp;<button id="AddWayPoint" (click)="Add_Additional_Waypoint()">Add Waypoint</button>
+  <app-add-trip-button (click)="addTriptoDB()"></app-add-trip-button>
 </div>
 <div id="container">
   <div id="map"></div>
@@ -53,5 +54,4 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=execute_Map">
 </script>
 
-<app-weather [currentLocation]='currentLocation' [DestinationMark]='DestinationMark' [timeElapsed]='timeElapsed'></app-weather>
-<app-history [currentLocation]='currentLocation' [DestinationMark]='DestinationMark' [timeElapsed]='timeElapsed'></app-history>
+<app-weather [currentLocation]='currentLocation' [DestinationMark]='DestinationMark' [timeElapsed]='timeElapsed' ></app-weather>

@@ -1,12 +1,27 @@
 <div>
     <br>
-    <table class="table">
-        <tr>
-            <th>Orgin</th>
-            <th>Desination</th>
-            <th>Trip Time</th>
-            <th>Distance</th>
-            <th>Created</th>
-        </tr>
+    <table class="tbl">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Time Entered</th>
+                <th scope="col">Orgin</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Trip time</th>
+                <th scope="col">User ID</th>
+            </tr>
+        </thead>
+
+        <ng-container *ngIf="trips.length">
+            <tbody *ngFor="let trp of trips; let i = index">
+                <td>{{trp.t_id}}</td>
+                <td>{{trp.submitted_datetime}}</td>
+                <td>{{trp.curr_location}}</td>
+                <td>{{trp.destination}}</td>  
+                <td>{{trp.time_elapsed}}</td>
+                <td>{{trp.user_id}}</td>  
+            </tbody>
+          </ng-container>
     </table>
+
 </div>
