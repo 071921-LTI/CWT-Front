@@ -1,5 +1,5 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<div id="map" style="width: 100%; height: 450px;"></div>
+<div id="map" style="width: 100%; height: 800px;"></div>
 <label>Starting Address:</label>
 <table>
   <tr>
@@ -40,7 +40,9 @@
 <div id="floating-panel" >
   &nbsp;<button id="GO" (click)="ShowRoute()">GO!</button>
   &nbsp;<button id="AddWayPoint" (click)="Add_Additional_Waypoint()">Add Waypoint</button>
-  <app-add-trip-button (click)="addTriptoDB()"></app-add-trip-button>
+  &nbsp;<button id="refresh" (click)="refresh()">ClearMap</button>
+  &nbsp;<app-add-trip-button (click)="addTriptoDB()"></app-add-trip-button>
+  
 </div>
 <div id="container">
   <div id="map"></div>

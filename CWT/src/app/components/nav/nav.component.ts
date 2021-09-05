@@ -42,6 +42,7 @@ export class NavComponent implements OnInit {
       this.app.NullToken();
       alert("Logging out");
       this.route.navigate(['/']);
+      
     }
     
   }

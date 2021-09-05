@@ -80,6 +80,7 @@ export class MapComponent implements OnInit {
 
   execute_Map(): void {
     //Marker Listener
+    console.log(token);
     this.getMap().addListener
       (
         "click", (mapsMouseEvent: any) => {
@@ -94,7 +95,8 @@ export class MapComponent implements OnInit {
           this.mark = mapsMouseEvent.latLng;
         }
       );
-
+    const trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(this.getMap());
     locationButton.textContent = "Pin to Current Location";
     locationButton.classList.add("custom-map-control-button");
     this.addLocationEvent()
@@ -187,7 +189,7 @@ export class MapComponent implements OnInit {
       }).then((response) => {
         directionsRenderer.setDirections(response);
         this.timeElapsed =response['routes'][0].legs[0].duration?.value;
-      }).catch((e) => window.alert("Directions request failed due to " + status));
+      }).catch((e) => window.alert("Directions request failed"));
   }
 
   Add_Additional_Waypoint() {
@@ -237,6 +239,19 @@ export class MapComponent implements OnInit {
     }
 
   }
+
+  refresh(){
+    this.single_Map = this.getMap(true);
+    const trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(this.getMap());
+    locationButton.textContent = "Pin to Current Location";
+    locationButton.classList.add("custom-map-control-button");
+    this.addLocationEvent()
+    this.getMap().controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    document.getElementById("sidebar")!.innerHTML = "";
+    this.x = {};
+    this.mark = {};
+    }
 
   //Formats the user input into something usable.
   SetPlace(Street: string, City: string, State: string, ZipCode: string): any {

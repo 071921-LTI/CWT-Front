@@ -12,6 +12,7 @@ export class LogInComponent implements OnInit {
 
   constructor(private router: Router, private token : AppComponent) {
     console.log(token.googleMapsUrl);
+    
   }
 
   ngOnInit(): void {
@@ -23,7 +24,6 @@ export class LogInComponent implements OnInit {
   Attempt_LogIn()
   {
     console.log("In Attempt LogIn");
-
     let apiURL = 'http://localhost:8080/auth';
     let xhr = new XMLHttpRequest();
     let requestBody = `{"username":\"${this.userName}\","password":\"${this.passWord}\"}`;
@@ -34,14 +34,13 @@ export class LogInComponent implements OnInit {
     xhr.send(requestBody);
 
     xhr.onreadystatechange = () => {
-      console.log("Got here!");
+      console.log("Got here!");  
       if(xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300){
            //Transition to next component (Map)
+
            let response = xhr.getResponseHeader("Authorization");
           sessionStorage.setItem('token',String(response));
            this.token.token = response;   
-          //  console.log("Token Acquired:{" + this.token.token + "}");
-          //  console.log(response?.slice(1))
            switch(response?.slice(1)){
             case ":ADMIN":
               this.router.navigate(['/',"Admin"]);
@@ -49,7 +48,7 @@ export class LogInComponent implements OnInit {
             case ":BASIC_USER":
               this.router.navigate(['/',"Main"])
             break;
-           }    
+           }  
             
       }
       else if(xhr.readyState === 4)
