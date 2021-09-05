@@ -19,8 +19,6 @@ export class UserServiceService {
   private url = 'http://localhost:8080/users';
 
   constructor(private http :HttpClient) { }
-
-
   
   getAllUsers():Observable<User[]>{
     return this.http.get<User[]>(this.url+"/all",httpOptions)

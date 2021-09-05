@@ -4,6 +4,10 @@ import { AppComponent } from 'src/app/app.component';
 import { Loader } from "@googlemaps/js-api-loader"
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { identifierModuleUrl, Position } from '@angular/compiler';
+import { Trip } from 'src/app/trip';
+import { TripsService } from 'src/app/services/trips.service';
+
+let token:String| null = sessionStorage.getItem("token");
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -36,7 +40,10 @@ export class MapComponent implements OnInit {
   mark: any;
   single_Map: any;
   WayPointsMap: Map<number, String> = new Map<number, String>();
-  constructor(private router: Router, private app: AppComponent) {
+  
+  tripToAdd:Trip[]=[];
+
+  constructor(private router: Router, private app: AppComponent, private tripSvc:TripsService) {
     /*if(app.isTokenNull()) --Uncomment this when done with Map Features.
     {
       console.log("Token is null!{" + app.token + "}");
@@ -146,8 +153,8 @@ export class MapComponent implements OnInit {
     if (this.x == null && this.mark == null) {
       this.x = this.SetPlace(this.starting_Street, this.starting_City, this.starting_State, this.starting_ZipCode);
       this.mark = this.SetPlace(this.end_Street, this.end_City, this.end_State, this.end_ZipCode);
-      this.currentLocation = this.x.slice(0,this.x.length-5);
-      this.DestinationMark = this.mark.slice(0,this.mark.length-5);
+      this.currentLocation = this.x;
+      this.DestinationMark = this.mark;
     }
     else{
       let input1 = this.SetPlace(this.starting_Street, this.starting_City, this.starting_State, this.starting_ZipCode);
@@ -266,4 +273,18 @@ export class MapComponent implements OnInit {
       }
     }
   }
+
+  addTriptoDB(){
+    this.tripToAdd.push({curr_location:this.currentLocation,
+                        destination:this.DestinationMark,time_elapsed:this.timeElapsed/60,
+                        user_id:Number(String(token).split(':',2)[0])})
+    console.log(this.currentLocation)
+    console.log(this.DestinationMark)
+    console.log("Hours"+Number(this.timeElapsed))
+    console.log(Number(String(token).split(':',2)[0]))
+    console.log("add trip")
+    console.log(this.tripToAdd[0])
+    this.tripSvc.addTrip(this.tripToAdd[0]).subscribe()
+  }
+
 }

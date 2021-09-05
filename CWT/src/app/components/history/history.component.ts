@@ -9,17 +9,20 @@ let token:String| null = sessionStorage.getItem("token");
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  trips: Trip[] =[];
+    trips: Trip[] =[];
     @Input() currentLocation:any;
     @Input() DestinationMark:any;
     @Input() timeElapsed:any;
     userId = String(token).split(':',2)[0];
-
   constructor(private trip: TripsService) {
   }
 
   ngOnInit(): void {
-    this.userTrips(1)
+    this.trip.getTripsFromUser(Number(this.userId)).subscribe((rtnTrp)=>(this.trips = rtnTrp));
+  }
+
+  getAllTrips(){
+    this.trip.getAllTrips().subscribe((rtrnTrips)=>(this.trips = rtrnTrips))
   }
 
   userTrips(user: number) {
@@ -39,8 +42,6 @@ export class HistoryComponent implements OnInit {
       (allreturned) => (this.trips = allreturned)
     )
   }
-
-
 
   addATrip(addTrip: Trip) {
     this.trip.addTrip(addTrip).subscribe(

@@ -19,6 +19,7 @@ import { AdminViewAllUsersComponent } from './components/admin-view-all-users/ad
 import { AdminDeleteUsersComponent } from './components/admin-delete-users/admin-delete-users.component';
 import { AdminViewTripHistoryComponent } from './components/admin-view-trip-history/admin-view-trip-history.component';
 import { ButtonComponent } from './components/button/button.component';
+import { AddTripButtonComponent } from './components/add-trip-button/add-trip-button.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ButtonComponent } from './components/button/button.component';
     AdminDeleteUsersComponent,
     AdminViewTripHistoryComponent,
     ButtonComponent,
+    AddTripButtonComponent,
   ],
   imports: [
     BrowserModule,

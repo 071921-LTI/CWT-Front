@@ -49,7 +49,6 @@ export class LogInComponent implements OnInit {
             case ":BASIC_USER":
               this.router.navigate(['/',"Main"])
             break;
-
            }    
             
       }

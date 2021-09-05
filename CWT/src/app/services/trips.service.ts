@@ -23,7 +23,6 @@ export class TripsService {
 
   constructor(private http :HttpClient) { }
 
-
   getATrip(trip:number): Observable<Trip[]>{
     return this.http.get<Trip[]>(this.urlOneTrip+trip,httpOptions);
   }
@@ -37,6 +36,7 @@ export class TripsService {
   }
 
   getTripsFromUser(user:number): Observable<Trip[]>{
+    console.log(user)
     return this.http.get<Trip[]>(this.urlUserTrips+user,httpOptions);
   }
 
