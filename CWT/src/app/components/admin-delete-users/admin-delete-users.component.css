@@ -1,0 +1,40 @@
+table{
+    margin: 5px;
+    padding: 5px;
+}
+
+tr{
+    margin: 100px;
+    padding: 100px;
+    height:2px;
+    border-width:4;
+}
+
+th{
+    margin: 5px;
+    padding: 5px;
+    height:2px;
+    border-left: 1px solid black; 
+    border-right: 1px solid black; 
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black; 
+}
+td{
+    padding: 5px;
+    border-left: 1px solid black; 
+    border-right: 1px solid black; 
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black; 
+}
+.line {
+    height:2px;
+    border-width:0;
+    color:gray;
+    background-color:gray;
+    margin-top :5px;
+    margin-bottom : 5px;
+}
+
+.usrTbl:hover{
+    background-color: #edf3f3;
+}
