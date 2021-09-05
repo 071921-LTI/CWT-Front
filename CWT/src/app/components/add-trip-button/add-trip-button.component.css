@@ -1,0 +1,10 @@
+.addTripBtn:hover {
+    background-color: #0be15a;
+    color: rgb(0, 0, 0);
+  }
+.addTripBtn{
+    padding: 5px 24px;
+    background-color: #edf3f3;
+    border: none;
+    transition: 0.3s;
+}

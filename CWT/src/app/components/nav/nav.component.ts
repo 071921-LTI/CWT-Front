@@ -1,8 +1,6 @@
-import { style } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router, Event } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
-import { LogInComponent } from '../log-in/log-in.component';
 
 @Component({
   selector: 'app-nav',
