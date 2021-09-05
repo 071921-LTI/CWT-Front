@@ -15,7 +15,7 @@ curTemp:any;
 curWeather:any;
 curHumidity:any;
 curTime:any;
-
+txt:string= '';
 Destday:number = 0;
 DestTemp:any;
 DestWeather:any;
@@ -36,6 +36,16 @@ public destWeather:any=[];
     this.curWeather = this.currWeather['currentConditions'].conditions;
     this.curHumidity = this.currWeather['currentConditions'].humidity;
     this.curTime = this.currWeather['currentConditions'].datetime;});
+    this.txt= '';
+    this.txt += "<td>" + this.currentLocation + "</td>";
+    this.txt += "<td>" + this.curTemp +"°F" + "</td>";
+    this.txt += "<td>" + this.curWeather + "</td>";
+    this.txt += "<td>" + this.curHumidity + "</td>";
+    this.txt += "<td>" + this.curTime + "</td>";
+    this.txt += "</tr>"; 
+            
+    const myElement = document.getElementById('table1')!;
+    myElement.innerHTML = this.txt;
   }
   
 
@@ -50,6 +60,15 @@ public destWeather:any=[];
     this.DestWeather = this.destWeather['days'][this.Destday].conditions;
     this.DestHumidity = this.destWeather['days'][this.Destday].humidity;
     this.DestTime = this.destWeather['days'][this.Destday].datetime;
+    this.txt += "<td>" + this.DestinationMark + "</td>";
+    this.txt += "<td>" + this.DestTemp +"°F" + "</td>";
+    this.txt += "<td>" + this.DestWeather + "</td>";
+    this.txt += "<td>" + this.DestHumidity + "</td>";
+    this.txt += "<td>" + this.DestTime + "</td>";
+    this.txt += "</tr>"; 
+            
+    const myElement = document.getElementById('table1')!;
+    myElement.innerHTML = this.txt;
   });
   }
 
