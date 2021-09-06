@@ -1,6 +1,9 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<div id="map" style="width: 100%; height: 450px;"></div>
-<label>Start Address:</label>
+
+<div id="map" style="width: 100%; height: 800px;"></div>
+<label>Starting Address:</label>
+
+
 <table>
   <tr>
     <td>
@@ -35,12 +38,14 @@
     </td>
   </tr>
 </table>
+<br><br>
 <div id='repeating_WayPoints'>
 </div>
 <div id="floating-panel">
   <br>
   &nbsp;<button id="GO" (click)="ShowRoute()" class="goBtn"><span>Go!</span></button>
   &nbsp;<button id="AddWayPoint" (click)="Add_Additional_Waypoint()" class="waypointBtn">Add Waypoint</button>
+  &nbsp;<button id="refresh" (click)="refresh()" class="waypointBtn">ClearMap</button>
   &nbsp;<app-add-trip-button (click)="addTriptoDB()"></app-add-trip-button>
 </div>
 <div id="container">

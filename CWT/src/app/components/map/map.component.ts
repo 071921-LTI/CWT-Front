@@ -6,8 +6,6 @@ import { HttpHeaders } from '@angular/common/http';
 import { Trip } from 'src/app/models/trip';
 import { TripsService } from 'src/app/services/trips.service';
 
-
-
 const locationButton = document.createElement("button");
 
 @Component({
@@ -31,6 +29,7 @@ export class MapComponent implements OnInit {
   x: any;
   mark: any;
   single_Map: any;
+  count = 0;
   WayPointsMap: Map<number, String> = new Map<number, String>();
   token:String| null = sessionStorage.getItem("token");
   tripToAdd:Trip[]=[];
@@ -38,6 +37,7 @@ export class MapComponent implements OnInit {
   constructor(private router: Router, private app: AppComponent, private tripSvc:TripsService) {}
 
   ngOnInit(): void {
+    console.log(this.token);
     this.addMapsScript();
     console.log(this.token)
   }
@@ -64,6 +64,7 @@ export class MapComponent implements OnInit {
 
   execute_Map(): void {
     //Marker Listener
+    console.log(this.token);
     this.getMap().addListener
       (
         "click", (mapsMouseEvent: any) => {
@@ -78,7 +79,8 @@ export class MapComponent implements OnInit {
           this.mark = mapsMouseEvent.latLng;
         }
       );
-
+    const trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(this.getMap());
     locationButton.textContent = "Pin to Current Location";
     locationButton.classList.add("custom-map-control-button");
     this.addLocationEvent()
@@ -171,7 +173,7 @@ export class MapComponent implements OnInit {
       }).then((response) => {
         directionsRenderer.setDirections(response);
         this.timeElapsed =response['routes'][0].legs[0].duration?.value;
-      }).catch((e) => window.alert("Directions request failed due to " + status));
+      }).catch((e) => window.alert("Directions request failed"));
   }
 
   Add_Additional_Waypoint() {
@@ -181,12 +183,19 @@ export class MapComponent implements OnInit {
     if (table?.hasChildNodes) {
       numID = table.children.length;
     }
+    let street:any;
+    let city:any;
+    let state:any;
+    let zip:any;
     cell.id = "WayPoint{" + numID + "}";
-    let street = document.createElement('input');
-    let city = document.createElement('input');
-    let state = document.createElement('input');
-    let zip = document.createElement('input');
-    street.innerHTML = `<input type="text" name="way_Street" id ="street${numID}">`
+    if(this.count === 0){
+      street = document.createElement('input');
+      city = document.createElement('input');
+      state = document.createElement('input');
+      zip = document.createElement('input');
+      this.count += 1;
+    }
+    street.innerHTML= `<input type="text" name="way_Street" id ="street${numID}">`
     city.innerHTML = `<input type="text" name="way_City" id ="city${numID}">`
     state.innerHTML = `<input type="text" name="way_State" id ="state${numID}">`
     zip.innerHTML = `<input type="number" name="way_Zip" id ="zip${numID}">`
@@ -221,6 +230,19 @@ export class MapComponent implements OnInit {
     }
 
   }
+
+  refresh(){
+    this.single_Map = this.getMap(true);
+    const trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(this.getMap());
+    locationButton.textContent = "Pin to Current Location";
+    locationButton.classList.add("custom-map-control-button");
+    this.addLocationEvent()
+    this.getMap().controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    document.getElementById("sidebar")!.innerHTML = "";
+    this.x = {};
+    this.mark = {};
+    }
 
   //Formats the user input into something usable.
   SetPlace(Street: string, City: string, State: string, ZipCode: string): any {
@@ -261,10 +283,12 @@ export class MapComponent implements OnInit {
   addTriptoDB(){
     this.tripToAdd.push({curr_location:this.currentLocation,
                         destination:this.DestinationMark,time_elapsed:this.timeElapsed/60,
-                        user_id:Number(String(this.token).split(':',2))})
+
+                        user_id:Number(String(this.token).split(':',2)[0])})
     console.log(this.currentLocation)
     console.log(this.DestinationMark)
-    console.log("Hours"+Number(this.timeElapsed))
+    console.log(Number(this.timeElapsed))
+
     console.log(Number(String(this.token).split(':',2)[0]))
     console.log("add trip")
     console.log(this.tripToAdd[0])

@@ -1,32 +1,45 @@
-button {
-    width:100%;
-    font-style: oblique;
-}
-.tbl_UserLogIn{
 
+
+button {
+  width:100%;
+  font-style: oblique;
 }
+
 
 .btn_LogIn:hover {
-    background-color: #a7903379;
-    border: none;
-    color: rgb(0, 0, 0);
-  }
+  background-color: #a7903379;
+  border: none;
+  color: rgb(0, 0, 0);
+}
 .btn_LogIn{
 
-    background-color: #a7903325;
-    border: none;
-    transition: 0.3s;
-    padding: 5px 24px;
+  background-color: #a7903325;
+  border: none;
+  transition: 0.3s;
+  padding: 5px 24px;
 }
 
 .btn_Register:hover {
-    background-color: #a7903379;
-    color: rgb(0, 0, 0);
-  }
+  background-color: #a7903379;
+  color: rgb(0, 0, 0);
+}
 .btn_Register{
 
-    background-color: #a7903325;
-    border: none;
-    transition: 0.3s;
-    padding: 5px 24px;
+  background-color: #a7903325;
+  border: none;
+  transition: 0.3s;
+  padding: 5px 24px;
+}
+
+.tbl_UserLogIn{
+  align-content: center;
+}
+div {
+  position: relative;
+  height: 200px;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
 }

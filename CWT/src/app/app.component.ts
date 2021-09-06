@@ -19,5 +19,6 @@ export class AppComponent {
 
   NullToken() {
     this.token = null;
+    
   }
 }
