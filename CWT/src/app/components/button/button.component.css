@@ -6,6 +6,6 @@
   .btn{
     padding: 8px 24px;
     background-color: #edf3f3;
-    border: none;
+    border: 1px solid #000000; 
     transition: 0.3s;
   }

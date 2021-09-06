@@ -2,7 +2,6 @@ import { Component, OnInit ,Input} from '@angular/core';
 import { TripsService } from 'src/app/services/trips.service';
 import { Trip } from 'src/app/models/trip';
 
-let token:String| null = sessionStorage.getItem("token");
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
@@ -13,7 +12,8 @@ export class HistoryComponent implements OnInit {
     @Input() currentLocation:any;
     @Input() DestinationMark:any;
     @Input() timeElapsed:any;
-    userId = String(token).split(':',2)[0];
+    token:String| null = sessionStorage.getItem("token");
+    userId = String(this.token).split(':',2)[0];
   constructor(private trip: TripsService) {
   }
 

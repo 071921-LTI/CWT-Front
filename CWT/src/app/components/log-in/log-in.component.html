@@ -1,28 +1,30 @@
-<table id="tbl_UserLogIn">
-    <tr>
-        <td>
-            <label>Enter Username:</label>
-        </td>
-        <td>
-            <input type="text" [(ngModel)]='userName' placeholder="Username">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label>Enter Password:</label>
-        </td>
-        <td>
-            <input type="password" [(ngModel)]='passWord' placeholder="Password">
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <button id="btn_LogIn" (click)='Attempt_LogIn()'>Log In</button>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <button id="btn_Register" routerLink='register'>Register</button>
-        </td>
-    </tr>
-</table>
+<div id="tbl_UserLogIn">
+    <table >
+        <tr>
+            <td>
+                <label class="uName">Enter Username:</label>
+            </td>
+            <td>
+                <input type="text" [(ngModel)]='userName' placeholder="Username">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="pw">Enter Password:</label>
+            </td>
+            <td>
+                <input type="password" [(ngModel)]='passWord' placeholder="Password">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="btn_LogIn" (click)='Attempt_LogIn()' class="btn_LogIn">Log In</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="btn_Register" routerLink='register' class="btn_Register">Register</button>
+            </td>
+        </tr>
+    </table>
+</div>
