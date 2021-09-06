@@ -16,11 +16,10 @@ const httpOptions = {
 })
 export class TripsService {
   
-  private urlAllTrips = 'http://localhost:8080/trip/all';
-  private urlOneTrip = 'http://localhost:8080/trip/';
-  private urlddTrip = 'http://localhost:8080/trip';
-  private urlUserTrips = 'http://localhost:8080/trip/user/';
-  private dltUserTrip = 'http://localhost:8080/trip/dlt/';
+  private urlAllTrips = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/all';
+  private urlOneTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/';
+  private urlddTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip';
+  private urlUserTrips = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/user/';
 
   constructor(private http :HttpClient) { }
 

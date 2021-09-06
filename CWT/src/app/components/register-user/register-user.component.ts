@@ -37,7 +37,7 @@ export class RegisterUserComponent implements OnInit {
           console.log("Passwords Match");
 
           //Now let's register the user.
-          let postURL = 'http://localhost:8080/users/';
+          let postURL = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/users/';
           let reg_xhr = new XMLHttpRequest(); 
           let registerBody = `{"username":\"${this.userName}\",
                               "password":\"${this.actualPassword}\"}`;

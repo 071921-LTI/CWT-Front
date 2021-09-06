@@ -26,7 +26,6 @@ public destWeather:any=[];
   constructor(private api:CallWeatherService) { }
  
   ngOnInit(): void {
-    
   }
 
   callCurrWeather():void{
@@ -35,7 +34,7 @@ public destWeather:any=[];
     this.curTemp = this.currWeather['currentConditions'].temp;
     this.curWeather = this.currWeather['currentConditions'].conditions;
     this.curHumidity = this.currWeather['currentConditions'].humidity;
-    this.curTime = this.currWeather['currentConditions'].datetime;});
+    this.curTime = this.currWeather['currentConditions'].datetime;
     this.txt= '';
     this.txt += "<td>" + this.currentLocation + "</td>";
     this.txt += "<td>" + this.curTemp +"°F" + "</td>";
@@ -43,9 +42,8 @@ public destWeather:any=[];
     this.txt += "<td>" + this.curHumidity + "</td>";
     this.txt += "<td>" + this.curTime + "</td>";
     this.txt += "</tr>"; 
-            
     const myElement = document.getElementById('table1')!;
-    myElement.innerHTML = this.txt;
+    myElement.innerHTML = this.txt;});
   }
   
 
