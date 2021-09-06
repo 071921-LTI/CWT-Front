@@ -195,6 +195,7 @@ export class MapComponent implements OnInit {
       zip = document.createElement('input');
       this.count += 1;
     }
+    
     street.innerHTML= `<input type="text" name="way_Street" id ="street${numID}">`
     city.innerHTML = `<input type="text" name="way_City" id ="city${numID}">`
     state.innerHTML = `<input type="text" name="way_State" id ="state${numID}">`

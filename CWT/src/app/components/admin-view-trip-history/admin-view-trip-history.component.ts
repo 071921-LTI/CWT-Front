@@ -10,6 +10,7 @@ import { TripsService } from 'src/app/services/trips.service';
 })
 export class AdminViewTripHistoryComponent implements OnInit {
   trips:Trip[]=[]
+
   
   constructor(private trip:TripsService) { }
 
@@ -19,6 +20,11 @@ export class AdminViewTripHistoryComponent implements OnInit {
 
   getAllTrips(){
     this.trip.getAllTrips().subscribe((rtrnTrips)=>(this.trips = rtrnTrips))
+  }
+
+  filterByUser(){
+    let id = +(<HTMLInputElement>document.getElementById("id")).value;
+    this.trip.getTripsFromUser(id).subscribe((response)=>(this.trips = response))
   }
 
 }

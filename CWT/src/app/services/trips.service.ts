@@ -36,7 +36,6 @@ export class TripsService {
   }
 
   getTripsFromUser(user:number): Observable<Trip[]>{
-    console.log(user)
     return this.http.get<Trip[]>(this.urlUserTrips+user,httpOptions);
   }
 
