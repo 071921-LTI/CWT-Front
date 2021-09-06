@@ -2,9 +2,6 @@ button {
     width:100%;
     font-style: oblique;
 }
-.tbl_UserLogIn{
-
-}
 
 .btn_LogIn:hover {
     background-color: #a7903379;
@@ -29,4 +26,18 @@ button {
     border: none;
     transition: 0.3s;
     padding: 5px 24px;
+}
+
+.tbl_UserLogIn{
+  align-content: center;
+}
+div {
+  position: relative;
+  background: rgb(33, 81, 168);
+  height: 200px;
+  width: 18%;
+  margin: 0 auto;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
 }
