@@ -36,8 +36,11 @@ export class TripsService {
   }
 
   getTripsFromUser(user:number): Observable<Trip[]>{
-    console.log(user)
     return this.http.get<Trip[]>(this.urlUserTrips+user,httpOptions);
+  }
+
+  dltTrip(trip:Trip):Observable<string>{
+    return this.http.delete<string>(this.dltUserTrip+trip.t_id,httpOptions);
   }
 
 }

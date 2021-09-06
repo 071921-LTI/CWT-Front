@@ -1,3 +1,10 @@
+div{
+    position: relative;
+    align-items:center;
+    margin: auto;
+    width: 60%;
+}
+
 .table{
     margin: 15px;
     padding: 15px;
@@ -48,24 +55,24 @@ td{
 }
 
 .a{
-    background-color: #cce4e6;
+    background-color: #a9a9a99e;
 }
 .b{
-    background-color: #cce4e6;
+    background-color: #a9a9a99e;
 }
 
 .c{
-    background-color: #cce4e6;
+    background-color: #a9a9a99e;
 }
 
 .d{
-    background-color: #cce4e6;
+    background-color: #a9a9a99e;
 }
 
 .e{
-    background-color: #cce4e6;
+    background-color: #a9a9a99e;
 }
 
 .f{
-    background-color: #cce4e6;
+    background-color: #a9a9a99e;
 }

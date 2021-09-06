@@ -1,13 +1,12 @@
 table{
     margin: 5px;
     padding: 5px;
+    height: 0;
 }
 
 tr{
     margin: 100px;
     padding: 100px;
-    height:2px;
-    border-width:4;
 }
 
 th{
@@ -39,4 +38,15 @@ td{
 
 .table:hover{
     background-color: #edf3f3;
+}
+
+.a{
+    background-color: #a9a9a99e;
+}
+
+div{
+    position: relative;
+    align-items:center;
+    margin: auto;
+    width: 55%;
 }
