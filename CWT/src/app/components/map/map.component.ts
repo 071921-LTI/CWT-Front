@@ -30,6 +30,7 @@ export class MapComponent implements OnInit {
   x: any;
   mark: any;
   single_Map: any;
+  count = 0;
   WayPointsMap: Map<number, String> = new Map<number, String>();
   token:String| null = sessionStorage.getItem("token");
   tripToAdd:Trip[]=[];
@@ -182,12 +183,19 @@ export class MapComponent implements OnInit {
     if (table?.hasChildNodes) {
       numID = table.children.length;
     }
+    let street:any;
+    let city:any;
+    let state:any;
+    let zip:any;
     cell.id = "WayPoint{" + numID + "}";
-    let street = document.createElement('input');
-    let city = document.createElement('input');
-    let state = document.createElement('input');
-    let zip = document.createElement('input');
-    street.innerHTML = `<input type="text" name="way_Street" id ="street${numID}">`
+    if(this.count === 0){
+      street = document.createElement('input');
+      city = document.createElement('input');
+      state = document.createElement('input');
+      zip = document.createElement('input');
+      this.count += 1;
+    }
+    street.innerHTML= `<input type="text" name="way_Street" id ="street${numID}">`
     city.innerHTML = `<input type="text" name="way_City" id ="city${numID}">`
     state.innerHTML = `<input type="text" name="way_State" id ="state${numID}">`
     zip.innerHTML = `<input type="number" name="way_Zip" id ="zip${numID}">`
