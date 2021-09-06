@@ -22,9 +22,14 @@ export class AdminViewTripHistoryComponent implements OnInit {
     this.trip.getAllTrips().subscribe((rtrnTrips)=>(this.trips = rtrnTrips))
   }
 
+
   filterByUser(){
     let id = +(<HTMLInputElement>document.getElementById("id")).value;
     this.trip.getTripsFromUser(id).subscribe((response)=>(this.trips = response))
+  }
+  deleteTrip(tripDlt:Trip){
+    this.trip.dltTrip(tripDlt).subscribe();
+    window.location.reload();
   }
 
 }

@@ -9,7 +9,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class AdminDeleteUsersComponent implements OnInit {
   users:User[]=[];
-  message:string="asd";
+  message:string="";
   constructor(private mngUsr:UserServiceService) { }
 
   ngOnInit(): void {

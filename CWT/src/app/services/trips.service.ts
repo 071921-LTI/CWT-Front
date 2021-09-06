@@ -20,6 +20,7 @@ export class TripsService {
   private urlOneTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/';
   private urlddTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip';
   private urlUserTrips = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/user/';
+  private dltUserTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/dlt/';
 
   constructor(private http :HttpClient) { }
 
@@ -37,6 +38,10 @@ export class TripsService {
 
   getTripsFromUser(user:number): Observable<Trip[]>{
     return this.http.get<Trip[]>(this.urlUserTrips+user,httpOptions);
+  }
+
+  dltTrip(trip:Trip):Observable<string>{
+    return this.http.delete<string>(this.dltUserTrip+trip.t_id,httpOptions);
   }
 
 }
