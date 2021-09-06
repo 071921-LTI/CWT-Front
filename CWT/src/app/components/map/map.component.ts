@@ -6,15 +6,8 @@ import { HttpHeaders } from '@angular/common/http';
 import { Trip } from 'src/app/models/trip';
 import { TripsService } from 'src/app/services/trips.service';
 
-let token:String| null = sessionStorage.getItem("token");
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Access-Control-Allow-Origin': '*',
-    'Authorization': 'authkey',
-    'userid': '1'
-  })
-};
+
 const locationButton = document.createElement("button");
 
 @Component({
@@ -39,13 +32,14 @@ export class MapComponent implements OnInit {
   mark: any;
   single_Map: any;
   WayPointsMap: Map<number, String> = new Map<number, String>();
-  
+  token:String| null = sessionStorage.getItem("token");
   tripToAdd:Trip[]=[];
 
   constructor(private router: Router, private app: AppComponent, private tripSvc:TripsService) {}
 
   ngOnInit(): void {
     this.addMapsScript();
+    console.log(this.token)
   }
 
   addMapsScript() {
@@ -267,11 +261,11 @@ export class MapComponent implements OnInit {
   addTriptoDB(){
     this.tripToAdd.push({curr_location:this.currentLocation,
                         destination:this.DestinationMark,time_elapsed:this.timeElapsed/60,
-                        user_id:Number(String(token).split(':',2)[0])})
+                        user_id:Number(String(this.token).split(':',2))})
     console.log(this.currentLocation)
     console.log(this.DestinationMark)
     console.log("Hours"+Number(this.timeElapsed))
-    console.log(Number(String(token).split(':',2)[0]))
+    console.log(Number(String(this.token).split(':',2)[0]))
     console.log("add trip")
     console.log(this.tripToAdd[0])
     this.tripSvc.addTrip(this.tripToAdd[0]).subscribe()
