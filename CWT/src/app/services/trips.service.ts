@@ -20,6 +20,7 @@ export class TripsService {
   private urlOneTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/';
   private urlddTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip';
   private urlUserTrips = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/user/';
+  private dltUserTrip = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/trip/dlt/';
 
   constructor(private http :HttpClient) { }
 
