@@ -38,3 +38,14 @@ td{
 .usrTbl:hover{
     background-color: #edf3f3;
 }
+
+.a{
+    background-color: #a9a9a99e;
+}
+
+div{
+    position: relative;
+    align-items:center;
+    margin: auto;
+    width: 30%;
+}

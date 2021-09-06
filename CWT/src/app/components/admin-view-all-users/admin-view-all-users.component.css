@@ -38,3 +38,25 @@ td{
 .ustTbl1:hover{
     background-color: #edf3f3;
 }
+
+div{
+    position: relative;
+    align-items:center;
+    margin: auto;
+    width: 25%;
+}
+
+.a{
+    background-color: #a9a9a99e;
+}
+.b{
+    background-color: #a9a9a99e;
+}
+
+.c{
+    background-color: #a9a9a99e;
+}
+
+.d{
+    background-color: #a9a9a99e;
+}

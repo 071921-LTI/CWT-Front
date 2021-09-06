@@ -20,6 +20,7 @@ export class TripsService {
   private urlOneTrip = 'http://localhost:8080/trip/';
   private urlddTrip = 'http://localhost:8080/trip';
   private urlUserTrips = 'http://localhost:8080/trip/user/';
+  private dltUserTrip = 'http://localhost:8080/trip/dlt/';
 
   constructor(private http :HttpClient) { }
 
@@ -36,8 +37,11 @@ export class TripsService {
   }
 
   getTripsFromUser(user:number): Observable<Trip[]>{
-    console.log(user)
     return this.http.get<Trip[]>(this.urlUserTrips+user,httpOptions);
+  }
+
+  dltTrip(trip:Trip):Observable<string>{
+    return this.http.delete<string>(this.dltUserTrip+trip.t_id,httpOptions);
   }
 
 }

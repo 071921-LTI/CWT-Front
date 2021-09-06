@@ -4,25 +4,25 @@ button {
 }
 
 .btn_LogIn:hover {
-    background-color: #a7903379;
+    background-color: #00000048;
     border: none;
     color: rgb(0, 0, 0);
   }
 .btn_LogIn{
 
-    background-color: #a7903325;
+    background-color: #2b2a2421;
     border: none;
     transition: 0.3s;
     padding: 5px 24px;
 }
 
 .btn_Register:hover {
-    background-color: #a7903379;
+    background-color: #00000048;
     color: rgb(0, 0, 0);
   }
 .btn_Register{
 
-    background-color: #a7903325;
+    background-color: #2b2a2421;
     border: none;
     transition: 0.3s;
     padding: 5px 24px;
@@ -33,11 +33,10 @@ button {
 }
 div {
   position: relative;
-  background: rgb(33, 81, 168);
-  height: 200px;
-  width: 18%;
+  background-color: #2b2a2421;
+  height: 185px;
+  width: 350px;
   margin: 0 auto;
   padding: 20px;
-  resize: both;
   overflow: auto;
 }

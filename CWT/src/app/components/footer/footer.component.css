@@ -1,3 +1,11 @@
 .footer{
     align-content: center;
 }
+
+div{
+    bottom:0;
+    right:0;
+    position: relative;
+    float: right;
+    margin-top: 200px;
+}

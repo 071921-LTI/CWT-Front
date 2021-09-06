@@ -21,4 +21,9 @@ export class AdminViewTripHistoryComponent implements OnInit {
     this.trip.getAllTrips().subscribe((rtrnTrips)=>(this.trips = rtrnTrips))
   }
 
+  deleteTrip(tripDlt:Trip){
+    this.trip.dltTrip(tripDlt).subscribe();
+    window.location.reload();
+  }
+
 }

@@ -2,3 +2,37 @@ button {
     width:100%;
     font-style: oblique;
 }
+
+.btnRgst:hover {
+    background-color: #a7903379;
+    color: rgb(0, 0, 0);
+  }
+.btnRgst{
+
+    background-color: #a7903325;
+    border: none;
+    transition: 0.3s;
+    padding: 5px 24px;
+}
+
+.btnLoginInst:hover {
+    background-color: #a7903379;
+    color: rgb(0, 0, 0);
+  }
+.btnLoginInst{
+
+    background-color: #a7903325;
+    border: none;
+    transition: 0.3s;
+    padding: 5px 24px;
+}
+
+div{
+    position: relative;
+    background-color: #a7903325;
+    height: 320px;
+    width: 360px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: auto;
+  }

@@ -4,11 +4,11 @@
     <table class="tbl">
         <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">username</th>
-                <th scope="col">role</th>
-                <th scope="col">registered time</th>
-                <th scope="col">Action</th>
+                <th scope="col" class="a">id</th>
+                <th scope="col" class="a">username</th>
+                <th scope="col" class="a">role</th>
+                <th scope="col" class="a">registered time</th>
+                <th scope="col" class="a">Action</th>
             </tr>
         </thead>
 
@@ -18,7 +18,7 @@
                 <td>{{num.username}}</td>
                 <td>{{num.role}}</td>
                 <td>{{num.registerDateTime}}</td>  
-                <app-button (click)="deleteUser(num)"></app-button>
+                <app-button (click)="deleteUser(num)" class="bt1"></app-button>
             </tr>
           </ng-container>
     </table>

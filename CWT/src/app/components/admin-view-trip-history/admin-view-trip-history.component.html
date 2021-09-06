@@ -4,12 +4,13 @@
     <table class="tbl">
         <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">Time Entered</th>
-                <th scope="col">Orgin</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Trip time</th>
-                <th scope="col">User ID</th>
+                <th scope="col" class="a">id</th>
+                <th scope="col" class="a">Time Entered</th>
+                <th scope="col" class="a">Orgin</th>
+                <th scope="col" class="a">Destination</th>
+                <th scope="col" class="a">Trip time</th>
+                <th scope="col" class="a">User ID</th>
+                <th scope="col" class="a">Action</th>
             </tr>
         </thead>
 
@@ -20,7 +21,8 @@
                 <td>{{trp.curr_location}}</td>
                 <td>{{trp.destination}}</td>  
                 <td>{{trp.time_elapsed}}</td>
-                <td>{{trp.user_id}}</td>  
+                <td>{{trp.user_id}}</td>
+                <app-button (click)="deleteTrip(trp)"></app-button>
             </tr>
           </ng-container>
     </table>
