@@ -24,7 +24,7 @@ export class LogInComponent implements OnInit {
   Attempt_LogIn()
   {
     console.log("In Attempt LogIn");
-    let apiURL = 'http://localhost:8080/auth';
+    let apiURL = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/auth';
     let xhr = new XMLHttpRequest();
     let requestBody = `{"username":\"${this.userName}\","password":\"${this.passWord}\"}`;
     //Database call, sending in userName and passWord, assuming return true.
@@ -39,14 +39,17 @@ export class LogInComponent implements OnInit {
            //Transition to next component (Map)
 
            let response = xhr.getResponseHeader("Authorization");
+           console.log(response);
           sessionStorage.setItem('token',String(response));
            this.token.token = response;   
            switch(response?.slice(1)){
             case ":ADMIN":
               this.router.navigate(['/',"Admin"]);
+              console.log(response);
               break;
             case ":BASIC_USER":
               this.router.navigate(['/',"Main"])
+              console.log(response);
             break;
            }  
             

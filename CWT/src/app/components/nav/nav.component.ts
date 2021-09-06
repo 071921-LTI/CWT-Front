@@ -38,6 +38,7 @@ export class NavComponent implements OnInit {
     if(this.route.url.toString() != "/" && this.route.url.toString() != "/register")
     {
       this.app.NullToken();
+      sessionStorage.setItem('token','');
       alert("Logging out");
       this.route.navigate(['/']);
       

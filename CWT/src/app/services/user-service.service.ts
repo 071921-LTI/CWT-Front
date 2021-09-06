@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserServiceService {
-  private url = 'http://localhost:8080/users';
+  private url = 'http://ec2-3-139-58-167.us-east-2.compute.amazonaws.com:8081/users';
 
   constructor(private http :HttpClient) { }
   
