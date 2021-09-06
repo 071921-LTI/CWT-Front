@@ -1,3 +1,27 @@
 .div{
     text-align: center;
 }
+
+.btn1:hover {
+    background-color: #61b3f2;
+    color: rgb(0, 0, 0);
+  }
+.btn1{
+
+    background-color: #edf3f3;
+    border: none;
+    transition: 0.3s;
+    padding: 5px 24px;
+}
+
+.btn2:hover {
+    background-color: #61b3f2;
+    color: rgb(0, 0, 0);
+  }
+.btn2{
+
+    background-color: #edf3f3;
+    border: none;
+    transition: 0.3s;
+    padding: 5px 24px;
+}

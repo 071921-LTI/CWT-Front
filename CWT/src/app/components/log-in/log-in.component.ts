@@ -42,6 +42,9 @@ export class LogInComponent implements OnInit {
            console.log(response);
           sessionStorage.setItem('token',String(response));
            this.token.token = response;   
+           console.log(response);
+          //  console.log("Token Acquired:{" + this.token.token + "}");
+          //  console.log(response?.slice(1))
            switch(response?.slice(1)){
             case ":ADMIN":
               this.router.navigate(['/',"Admin"]);

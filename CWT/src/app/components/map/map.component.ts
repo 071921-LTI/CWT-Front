@@ -6,7 +6,6 @@ import { HttpHeaders } from '@angular/common/http';
 import { Trip } from 'src/app/models/trip';
 import { TripsService } from 'src/app/services/trips.service';
 
-
 const locationButton = document.createElement("button");
 
 @Component({
@@ -40,6 +39,7 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.token);
     this.addMapsScript();
+    console.log(this.token)
   }
 
   addMapsScript() {
@@ -283,10 +283,12 @@ export class MapComponent implements OnInit {
   addTriptoDB(){
     this.tripToAdd.push({curr_location:this.currentLocation,
                         destination:this.DestinationMark,time_elapsed:this.timeElapsed/60,
+
                         user_id:Number(String(this.token).split(':',2)[0])})
     console.log(this.currentLocation)
     console.log(this.DestinationMark)
     console.log(Number(this.timeElapsed))
+
     console.log(Number(String(this.token).split(':',2)[0]))
     console.log("add trip")
     console.log(this.tripToAdd[0])

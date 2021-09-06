@@ -3,3 +3,54 @@ html,
 #map {
   flex: auto;
 }
+
+
+.goBtn{
+  display: inline-block;
+  padding: 5px 24px;
+  background-color: #edf3f3;
+  border: none;
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+.goBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.15s;
+}
+
+.goBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.15s;
+}
+
+.goBtn:hover{
+  color: #19c22d;
+}
+
+.goBtn:hover span {
+  padding-right: 25px;
+
+}
+
+.goBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.waypointBtn:hover {
+  background-color: #e3ed5f;
+  color: rgb(0, 0, 0);
+}
+.waypointBtn{
+  padding: 5px 24px;
+  background-color: #edf3f3;
+  border: none;
+  transition: 0.3s;
+}
