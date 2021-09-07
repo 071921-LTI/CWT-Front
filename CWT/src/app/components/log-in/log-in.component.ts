@@ -45,12 +45,13 @@ export class LogInComponent implements OnInit {
            console.log(response);
           //  console.log("Token Acquired:{" + this.token.token + "}");
           //  console.log(response?.slice(1))
-           switch(response?.slice(1)){
-            case ":ADMIN":
+          // console.log(response?.split(':',2)[1]);
+           switch(response?.split(':',2)[1]){
+            case "ADMIN":
               this.router.navigate(['/',"adminViewAll"]);
               console.log(response);
               break;
-            case ":BASIC_USER":
+            case "BASIC_USER":
               this.router.navigate(['/',"Main"])
               console.log(response);
             break;
