@@ -1,7 +1,7 @@
 <app-admin-nav-bar></app-admin-nav-bar>
 <div>
-    <button id="btn_id" (click)="filterByUser()" class="UserId">Filter By UserID</button>
-    &nbsp;<input class="inputstyle" type="text" name="id" id="id">
+
+
     <br>
     <table class="tbl">
         <thead>
@@ -17,16 +17,19 @@
         </thead>
 
         <ng-container *ngIf="trips.length">
-            <tr *ngFor="let trp of trips; let i = index" class="table" >
+            <tr *ngFor="let trp of trips; let i = index" class="table">
                 <td>{{trp.t_id}}</td>
-                <td>{{trp.submitted_datetime}}</td>
+                <td> {{trp.submitted_datetime|date:'Y/M/d h:m:s'}} </td>
                 <td>{{trp.curr_location}}</td>
-                <td>{{trp.destination}}</td>  
+                <td>{{trp.destination}}</td>
                 <td>{{trp.time_elapsed}}</td>
                 <td>{{trp.user_id}}</td>
                 <app-button (click)="deleteTrip(trp)"></app-button>
             </tr>
-          </ng-container>
+        </ng-container>
+        <br>
+        <button id="btn_id" (click)="filterByUser()" class="UserId">Filter By UserID</button>
+        &nbsp;<input class="inputstyle" type="text" name="id" id="id">
     </table>
 
 </div>

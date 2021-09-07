@@ -4,9 +4,12 @@
   }
 
   .btn{
-    padding: 8px 24px;
+    padding: 2px 30px;
     background-color: #edf3f3;
-    border: 0.2px solid #000000; 
+    border: 0.1px solid #000000; 
+    border-left: none;
+    border-top: none;
     transition: 0.3s;
     height: 49px;
+    border-radius: 0%;
   }

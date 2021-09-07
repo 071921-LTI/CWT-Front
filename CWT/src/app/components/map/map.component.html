@@ -50,10 +50,9 @@
 </div>
 <div id="container">
   <div id="map"></div>
+  <app-weather [currentLocation]='currentLocation' [DestinationMark]='DestinationMark' [timeElapsed]='timeElapsed'>
+  </app-weather>
   <div id="sidebar" style="float: left; width: 100%">
-
-    <app-weather [currentLocation]='currentLocation' [DestinationMark]='DestinationMark' [timeElapsed]='timeElapsed'>
-    </app-weather>
   </div>
 
 </div>

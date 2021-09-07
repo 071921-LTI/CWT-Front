@@ -5,8 +5,8 @@ table{
 }
 
 tr{
-    margin: 100px;
-    padding: 100px;
+
+
 }
 
 th{
@@ -20,7 +20,7 @@ th{
 }
 
 td{
-    padding: 5px;
+
     border-left: 1px solid black; 
     border-right: 1px solid black; 
     border-top: 1px solid black; 
@@ -48,5 +48,24 @@ div{
     position: relative;
     align-items:center;
     margin: auto;
-    width: 55%;
+    width: 90%;
 }
+
+
+.UserId:hover {
+    background-color: #46ff36;
+    color: rgb(0, 0, 0);
+  }
+
+  .UserId{
+    padding: 8px ;
+    background-color: #edf3f3;
+    border: 0.2px solid #000000; 
+    transition: 0.3s;
+    height: 40px;
+  }
+
+  input{
+      height: 41px;
+  }
+
