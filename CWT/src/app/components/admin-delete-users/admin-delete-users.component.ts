@@ -18,6 +18,5 @@ export class AdminDeleteUsersComponent implements OnInit {
 
   deleteUser(usrDlet:User){
     this.mngUsr.deleteUser(usrDlet).subscribe((msg) =>this.message = msg);
-    window.location.reload();
   }
 }

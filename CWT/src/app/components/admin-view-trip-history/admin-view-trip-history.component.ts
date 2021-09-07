@@ -29,7 +29,6 @@ export class AdminViewTripHistoryComponent implements OnInit {
   }
   deleteTrip(tripDlt:Trip){
     this.trip.dltTrip(tripDlt).subscribe();
-    window.location.reload();
   }
 
 }
