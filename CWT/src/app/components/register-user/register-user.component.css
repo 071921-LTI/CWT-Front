@@ -4,24 +4,24 @@ button {
 }
 
 .btnRgst:hover {
-    background-color: #a7903379;
+    background-color: #00000048;
     color: rgb(0, 0, 0);
   }
 .btnRgst{
 
-    background-color: #a7903325;
+    background-color: #2b2a2421;
     border: none;
     transition: 0.3s;
     padding: 5px 24px;
 }
 
 .btnLoginInst:hover {
-    background-color: #a7903379;
+    background-color: #00000048;
     color: rgb(0, 0, 0);
   }
 .btnLoginInst{
 
-    background-color: #a7903325;
+    background-color: #2b2a2421;
     border: none;
     transition: 0.3s;
     padding: 5px 24px;
@@ -29,7 +29,7 @@ button {
 
 div{
     position: relative;
-    background-color: #a7903325;
+    background-color: #2b2a2421;
     height: 320px;
     width: 360px;
     margin: 0 auto;

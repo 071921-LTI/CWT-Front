@@ -15,7 +15,7 @@
         <ng-container *ngIf="trips.length">
             <tr *ngFor="let trp of trips; let i = index" class="ustTbl2">
                 <td>{{trp.t_id}}</td>
-                <td>{{trp.submitted_datetime}}</td>
+                <td>{{trp.submitted_datetime|date:'Y/M/d h:m:s'}}</td>
                 <td>{{trp.curr_location}}</td>
                 <td>{{trp.destination}}</td>  
                 <td>{{trp.time_elapsed}}</td>

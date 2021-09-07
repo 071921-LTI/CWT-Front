@@ -31,8 +31,5 @@ export class AdminNavBarComponent implements OnInit {
   mngTrips() {
     this.route.navigate(['/', "adminViewAllTrips"])
   }
-  home() {
-    this.route.navigate(['/', "Admin"])
-  }
 
 }

@@ -47,7 +47,7 @@ export class LogInComponent implements OnInit {
           //  console.log(response?.slice(1))
            switch(response?.slice(1)){
             case ":ADMIN":
-              this.router.navigate(['/',"Admin"]);
+              this.router.navigate(['/',"adminViewAll"]);
               console.log(response);
               break;
             case ":BASIC_USER":

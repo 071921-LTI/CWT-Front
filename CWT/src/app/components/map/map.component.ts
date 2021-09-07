@@ -243,6 +243,7 @@ export class MapComponent implements OnInit {
     document.getElementById("sidebar")!.innerHTML = "";
     this.x = {};
     this.mark = {};
+
     }
 
   //Formats the user input into something usable.
